@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    background-color: #fff3f5; /* Soft pink background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    animation: backgroundAnimation 30s infinite linear alternate;
+}
+
+.tracker-container {
+    text-align: center;
+}
+
+.tracker-title {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff80ab; /* Pink title */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: textGlow 2s infinite alternate;
+}
+
+.tracker {
+    background-color: rgba(255, 255, 255, 0.8); /* White with slight transparency */
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 300px;
+    position: relative;
+    animation: cardAnimation 3s ease-in-out infinite alternate;
+}
+
+#display {
+    font-size: 48px;
+    margin-bottom: 20px;
+    color: #ff80ab; /* Pink text color */
+    background-color: #fff; /* White display background */
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px auto;
+    box-shadow: 0 0 15px rgba(255, 128, 171, 0.5);
+    animation: pulse 1s infinite alternate;
+}
+
+.buttons button {
+    background-color: #ff80ab; /* Pink buttons */
+    padding: 12px 24px;
+    border: none;
+    border-radius: 28px;
+    color: #fff;
+    transition: all .2s ease;
+    outline: 0;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.buttons button:hover,
+.buttons button:focus {
+    background-color: #f06292; /* Lighter pink on hover */
+    box-shadow: 0px 4px 27px -12px rgba(255, 128, 171, 0.7);
+}
+
+#laps {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-top: 20px;
+}
+
+#laps li {
+    background-color: #fff; /* White lap background */
+    margin-bottom: 5px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+#laps li:hover {
+    background-color: #ffe6f7; /* Light pink on hover */
+}
+
+/* Keyframes for animations */
+
+@keyframes backgroundAnimation {
+    0% {
+        background-color: #fff3f5;
+    }
+    50% {
+        background-color: #fce4ec;
+    }
+    100% {
+        background-color: #fff3f5;
+    }
+}
+
+@keyframes textGlow {
+    0% {
+        text-shadow: 2px 2px 4px rgba(255, 128, 171, 0.3);
+    }
+    100% {
+        text-shadow: 2px 2px 8px rgba(255, 128, 171, 0.5);
+    }
+}
+
+@keyframes cardAnimation {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 15px rgba(255, 128, 171, 0.5);
+    }
+    100% {
+        transform: scale(1.05);
+        box-shadow: 0 0 20px rgba(255, 128, 171, 0.7);
+    }
+}
